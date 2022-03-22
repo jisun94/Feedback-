@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate, Routes, Route } from 'react-router-dom';
 
 function Post() {
   const status = 200;
@@ -14,6 +14,9 @@ function Post() {
     <div>
       Post
       <button onClick={onClick}>Click</button>
+      <Routes>
+        <Route path="/show" element={<h1>Hello World</h1>} />
+      </Routes>
     </div>
   );
 }
