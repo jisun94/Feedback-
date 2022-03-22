@@ -1,11 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  NavLink,
-} from 'react-router-dom';
-import Card from './components/shared/Card';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import Header from './components/Header';
 import FeedbackList from './components/FeedbackList';
@@ -13,6 +7,7 @@ import FeedbackStats from './components/FeedbackStats';
 import FeedbackForm from './components/FeedbackForm';
 import AboutIconLink from './components/AboutIconLink';
 import AboutPage from './components/pages/AboutPage';
+import Post from './components/Post';
 
 import FeedbackData from './data/FeedbackData';
 
@@ -50,16 +45,9 @@ function App() {
           ></Route>
 
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/post/:id/:name" element={<Post />} />
         </Routes>
 
-        <Card>
-          <NavLink to="/" activeClassName="active">
-            Home
-          </NavLink>
-          <NavLink to="/about" activeClassName="active">
-            About
-          </NavLink>
-        </Card>
         <AboutIconLink />
       </div>
     </Router>
